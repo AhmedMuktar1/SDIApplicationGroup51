@@ -76,6 +76,14 @@ QPushButton:hover { background-color: rgba(100, 100, 100, 1); }
 	background-color: rgb(114, 159, 207);
 }
 
+#sendMessageButton {
+	padding: 5px;
+}
+
+#addFriendsButton {
+	padding: 5px;
+}
+
 #chatsTitle {
 	font-size: 25px;
 
@@ -264,8 +272,14 @@ border:1px solid black
    <item>
     <widget class="QWidget" name="bottomSection" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <property name="topMargin">
        <number>1</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
       </property>
       <item>
        <widget class="QWidget" name="recipientSection" native="true">
@@ -282,6 +296,12 @@ border:1px solid black
          </size>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QWidget" name="RecipientButtons" native="true">
            <property name="sizePolicy">
@@ -600,7 +620,7 @@ border:1px solid black
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>32</height>
+       <height>41</height>
       </size>
      </property>
     </spacer>

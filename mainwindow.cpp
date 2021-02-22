@@ -30,3 +30,10 @@ void MainWindow::on_loginButton_clicked()
         QMessageBox::warning(this, "Login", "Username and password incorrect");
     }
 }
+
+void MainWindow::on_signInButton_clicked()
+{
+    signup signup;
+    signup.setModal(true);
+    signup.exec();
+}

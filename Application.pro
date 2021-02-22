@@ -19,16 +19,19 @@ SOURCES += \
     main.cpp \
     mainhub.cpp \
     mainwindow.cpp \
+    sendmessage.cpp \
     signup.cpp
 
 HEADERS += \
     mainhub.h \
     mainwindow.h \
+    sendmessage.h \
     signup.h
 
 FORMS += \
     login.ui \
     mainhub.ui \
+    sendmessage.ui \
     signup.ui
 
 # Default rules for deployment.
