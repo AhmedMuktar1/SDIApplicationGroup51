@@ -183,7 +183,7 @@ border:1px solid black
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="settingsButton">
+       <widget class="QPushButton" name="AccountButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -197,7 +197,7 @@ border:1px solid black
          </size>
         </property>
         <property name="text">
-         <string>Settings</string>
+         <string>Account</string>
         </property>
        </widget>
       </item>
@@ -320,14 +320,7 @@ border:1px solid black
             <item>
              <widget class="QPushButton" name="sendMessageButton">
               <property name="text">
-               <string>Send Message</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="addFriendsButton">
-              <property name="text">
-               <string>Add Friend</string>
+               <string>Send New Message</string>
               </property>
              </widget>
             </item>
@@ -620,7 +613,7 @@ border:1px solid black
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>41</height>
+       <height>40</height>
       </size>
      </property>
     </spacer>

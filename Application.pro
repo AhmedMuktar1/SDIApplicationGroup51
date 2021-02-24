@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    account.cpp \
     main.cpp \
     mainhub.cpp \
     mainwindow.cpp \
@@ -23,12 +24,14 @@ SOURCES += \
     signup.cpp
 
 HEADERS += \
+    account.h \
     mainhub.h \
     mainwindow.h \
     sendmessage.h \
     signup.h
 
 FORMS += \
+    account.ui \
     login.ui \
     mainhub.ui \
     sendmessage.ui \

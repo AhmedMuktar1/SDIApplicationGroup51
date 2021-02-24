@@ -22,9 +22,13 @@ private slots:
 
     void on_signInButton_clicked();
 
+    void on_restartButton_2_clicked();
+
+    void on_shutdownButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     mainhub *Mainhub;
-    signup *Signup;
+    MainWindow *mainWindow;
 };
 #endif // MAINWINDOW_H

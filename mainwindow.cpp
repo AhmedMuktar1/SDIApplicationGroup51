@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_login.h"
 #include <QMessageBox>
+#include <stdlib.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,4 +37,16 @@ void MainWindow::on_signInButton_clicked()
     signup signup;
     signup.setModal(true);
     signup.exec();
+}
+
+void MainWindow::on_restartButton_2_clicked()
+{
+    hide();
+    mainWindow = new MainWindow(this);
+    mainWindow->show();
+}
+
+void MainWindow::on_shutdownButton_2_clicked()
+{
+    exit(1);
 }
