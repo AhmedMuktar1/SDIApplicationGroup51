@@ -50,3 +50,8 @@ void MainWindow::on_shutdownButton_2_clicked()
 {
     exit(1);
 }
+
+void MainWindow::on_loginPasswordInput_cursorPositionChanged(int arg1, int arg2)
+{
+
+}
