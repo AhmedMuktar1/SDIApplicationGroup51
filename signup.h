@@ -20,6 +20,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_restartButton_2_clicked();
+
+    void on_shutdownButton_2_clicked();
+
 private:
     Ui::signup *ui;
 

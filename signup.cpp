@@ -20,22 +20,6 @@ signup::~signup()
 }
 
 
-//void MainWindow::on_loginButton_clicked()
-//{
-//    QString username = ui->loginUsernameInput->text();
-//    QString password = ui->loginPasswordInput->text();
-
-//    if(username == "test" && password == "test") {
-//        QMessageBox::information(this, "Login", "Username and password is correct");
-//        hide();
-//        Mainhub = new mainhub(this);
-//        Mainhub->show();
-//    }
-//    else {
-//        QMessageBox::warning(this, "Login", "Username and password incorrect");
-//    }
-//}
-
 
 //using namespace std;
 //bool Email_check(string email)
@@ -44,11 +28,20 @@ signup::~signup()
 //    return regex_match(email, pattern);
 //}
 
+static bool IsEmailAddress(const std::string& str)
+{
+    // Locate '@'
+    auto at = std::find(str.begin(), str.end(), '@');
+    // Locate '.' after '@'
+    auto dot = std::find(at, str.end(), '.');
+    // make sure both characters are present
+    return (at != str.end()) && (dot != str.end());
+}
+
+
 void signup::on_pushButton_clicked()
 {
-//    hide();
-//    mainWindow = new MainWindow(this);
-//    mainWindow->show();
+
 
     //ui->lineEdit->setText("Hello World");
     QString userName = ui->lineEdit->text();
@@ -68,28 +61,31 @@ void signup::on_pushButton_clicked()
 
 
 
-    if (Email == "@"){
-
-    }
-    else{
-        QMessageBox::information(this, "Please", "Enter a valid email");
-
-    }
-
-    if (Email == repEmail){
-
-    }
-    else {
-        QMessageBox::information(this, "Please", "Email is not the same");
-
-    }
+//    if (IsEmailAddress =){
+//        QMessageBox::information(this, "Please", "Enter a valid email");
 
 
-    if(Password <8){
+//    }
+//    else{
+//        QMessageBox::information(this, "Please", "Enter a valid email");
+
+//    }
+
+//    if (Email == repEmail){
+
+//    }
+//    else {
+//        QMessageBox::information(this, "Please", "Email is not the same");
+
+//    }
+
+
+    if(Password >8){
         QMessageBox::information(this, "Please", "Enter a Password Longer than 8 Characters");
 
 
     }
+
 
     if(repPassword == Password){
 
@@ -113,13 +109,27 @@ void signup::on_pushButton_clicked()
         hide();
         mainWindow2=new MainWindow(this);
         mainWindow2->show();
+        QMessageBox::information(this, "Congratulations", "your account has been created!");
+
+
 
 
     }
 
 
+}
 
 
+void signup::on_restartButton_2_clicked()
+{
+    hide();
+    signup signup;
+    signup.setModal(true);
+    signup.exec();
 
 }
 
+void signup::on_shutdownButton_2_clicked()
+{
+    exit(1);
+}
