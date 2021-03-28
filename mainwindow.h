@@ -26,6 +26,8 @@ private slots:
 
     void on_shutdownButton_2_clicked();
 
+    void on_loginPasswordInput_cursorPositionChanged(int arg1, int arg2);
+
 private:
     Ui::MainWindow *ui;
     mainhub *Mainhub;
