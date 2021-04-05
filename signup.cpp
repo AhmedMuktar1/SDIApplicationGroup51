@@ -4,6 +4,11 @@
 #include "mainwindow.h"
 #include <stdlib.h>
 #include <regex>
+#include <iostream>
+#include <fstream>
+#include <QFile>
+#include <QDebug>
+#include <QTextStream>
 
 MainWindow *mainWindow2;
 
@@ -55,8 +60,7 @@ void signup::on_pushButton_clicked()
 
 
     if(userName <1){
-        QMessageBox::information(this, "The", "Username has to have more then 1 character");
-
+        QMessageBox::warning(this, "The", "Username has to have more then 1 character");
     }
 
 
@@ -80,8 +84,8 @@ void signup::on_pushButton_clicked()
 //    }
 
 
-    if(Password >8){
-        QMessageBox::information(this, "Please", "Enter a Password Longer than 8 Characters");
+    if(Password < 8){
+        QMessageBox::warning(this, "Please", "Enter a Password Longer than 8 Characters");
 
 
     }
@@ -91,31 +95,45 @@ void signup::on_pushButton_clicked()
 
     }
     else{
-        QMessageBox::information(this, "Please", "Enter same Password");
+        QMessageBox::warning(this, "Please", "Enter same Password");
 
     }
 
     if(first <1){
-        QMessageBox::information(this, "Please", "Enter First Name");
+        QMessageBox::warning(this, "Please", "Enter First Name");
 
 
     }
     if(last <1){
-        QMessageBox::information(this, "Please", "Enter Last Name");
+        QMessageBox::warning(this, "Please", "Enter Last Name");
 
 
     }
-    else{
+    if (userName > 1 && Password > 8 && repPassword == Password && first > 1 && last > 1){
         hide();
-        mainWindow2=new MainWindow(this);
-        mainWindow2->show();
+        QFile file("userdata.txt");
+
+        if(!file.open(QFile::WriteOnly | QFile::Text)){
+            QMessageBox::warning(this, "Warning", "File not open.");
+        }
+        else {
+            QTextStream out(&file);
+            out << userName;
+            out << endl;
+            out << Password;
+            file.flush();
+            file.close();
+        }
+
+        //mainWindow2=new MainWindow(this);
+        //mainWindow2->show();
         QMessageBox::information(this, "Congratulations", "your account has been created!");
 
-
-
-
     }
-
+    else {
+        qDebug() << "Could not open file ";
+        return;
+    }
 
 }
 

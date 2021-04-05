@@ -2,6 +2,10 @@
 #include "ui_login.h"
 #include <QMessageBox>
 #include <stdlib.h>
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,18 +22,37 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_loginButton_clicked()
 {
+    QString Username;
+    QString Password;
     QString username = ui->loginUsernameInput->text();
     QString password = ui->loginPasswordInput->text();
 
-    if(username == "test" && password == "test") {
-        QMessageBox::information(this, "Login", "Username and password is correct");
-        hide();
-        Mainhub = new mainhub(this);
-        Mainhub->show();
+    QFile file("userdata.txt");
+    if ((username == "") & (password == "")) {
+        QMessageBox::warning(this, "Login", "Username and password incorrect!");
     }
     else {
-        QMessageBox::warning(this, "Login", "Username and password incorrect");
+        if(!file.open(QFile::ReadOnly | QFile::Text)){
+            QMessageBox::warning(this, "Warning", "File not open.");
+        }
+        else {
+            QTextStream in(&file);
+            QString Username = in.readLine();
+            QString Password = in.readLine();
+            file.close();
+        }
+
+        if(username == "test" && password == "test") {
+            QMessageBox::information(this, "Login", "Username and password is correct");
+            hide();
+            Mainhub = new mainhub(this);
+            Mainhub->show();
+        }
+        else {
+            QMessageBox::warning(this, "Login", "Username and password incorrect!");
+        }
     }
+
 }
 
 void MainWindow::on_signInButton_clicked()

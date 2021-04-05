@@ -48,10 +48,9 @@ QPushButton:hover { background-color: rgba(100, 100, 100, 1); }
 	padding: 3px;
 	text-transform: uppercase;
 }
-#message1 {
+#message0, #message00 {
 	padding: 5px;
 	border-radius: 5px;
-	margin: 5px;
 	background-color: rgb(114, 159, 207);
 }
 
@@ -318,9 +317,19 @@ border:1px solid black
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QPushButton" name="sendMessageButton">
+             <widget class="QLineEdit" name="RecipientInput">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="RecipientButton">
               <property name="text">
-               <string>Send New Message</string>
+               <string>Add Recipient</string>
               </property>
              </widget>
             </item>
@@ -344,44 +353,86 @@ border:1px solid black
              <number>1</number>
             </property>
             <item>
-             <widget class="QLabel" name="chat1">
+             <widget class="QPushButton" name="chat">
               <property name="text">
-               <string>LewisActon</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="chat2">
+             <widget class="QPushButton" name="chat1">
               <property name="text">
-               <string>SDI Group</string>
+               <string>sdi</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="chat3">
+             <widget class="QPushButton" name="chat2">
               <property name="text">
-               <string>GeorgeHolland</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="chat4">
+             <widget class="QPushButton" name="chat3">
               <property name="text">
-               <string>TobyHugh</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="chat5">
+             <widget class="QPushButton" name="chat4">
               <property name="text">
-               <string>ElonMusk</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="chat6">
+             <widget class="QPushButton" name="chat5">
               <property name="text">
-               <string>RobertDowneyJr</string>
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chat6">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chat7">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chat8">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chat9">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chat10">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="chat11">
+              <property name="text">
+               <string/>
               </property>
              </widget>
             </item>
@@ -430,143 +481,34 @@ border:1px solid black
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="horizontalWidget" native="true">
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <property name="topMargin">
-             <number>1</number>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>476</width>
+              <height>384</height>
+             </rect>
             </property>
-            <item>
-             <widget class="QLabel" name="message1">
-              <property name="text">
-               <string>Hey Ahmed!</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QTextBrowser" name="messageBox">
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_7">
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <spacer name="horizontalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QLabel" name="message2">
-             <property name="text">
-              <string>Hey Lewis!</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_8">
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="message3">
-             <property name="text">
-              <string>Want the Answeres for the test?</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_4">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_9">
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <spacer name="horizontalSpacer_5">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QLabel" name="message4">
-             <property name="text">
-              <string>No! Cheating is bad!</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="QLabel" name="messageStatus">
-           <property name="text">
-            <string>Delivered</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
          </item>
          <item>
           <widget class="QWidget" name="sendMessageSection" native="true">

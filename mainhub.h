@@ -23,9 +23,25 @@ private slots:
 
     void on_AccountButton_clicked();
 
+    void on_chat1_clicked();
+
+    void on_chat_clicked();
+
+    void on_sendMessage_clicked();
+
+    void on_powerButton_clicked();
+
+    void on_restartButton_clicked();
+
+    void on_RecipientButton_clicked();
+
 private:
     Ui::mainhub *ui;
     account *Account;
+    mainhub *MainHub;
+public:
+
 };
+
 
 #endif // MAINHUB_H

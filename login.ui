@@ -202,20 +202,6 @@
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_13">
               <item>
-               <widget class="QLabel" name="loginPasswordLabel">
-                <property name="text">
-                 <string>Password: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="loginPasswordInput"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_14">
-              <item>
                <widget class="QLabel" name="loginUsernameLabel">
                 <property name="text">
                  <string>Username:</string>
@@ -224,6 +210,20 @@
               </item>
               <item>
                <widget class="QLineEdit" name="loginUsernameInput"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <item>
+               <widget class="QLabel" name="loginPasswordLabel">
+                <property name="text">
+                 <string>Password: </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="loginPasswordInput"/>
               </item>
              </layout>
             </item>
