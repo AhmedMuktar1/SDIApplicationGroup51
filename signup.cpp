@@ -33,16 +33,6 @@ signup::~signup()
 //    return regex_match(email, pattern);
 //}
 
-static bool IsEmailAddress(const std::string& str)
-{
-    // Locate '@'
-    auto at = std::find(str.begin(), str.end(), '@');
-    // Locate '.' after '@'
-    auto dot = std::find(at, str.end(), '.');
-    // make sure both characters are present
-    return (at != str.end()) && (dot != str.end());
-}
-
 
 void signup::on_pushButton_clicked()
 {

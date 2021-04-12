@@ -27,7 +27,7 @@ void MainWindow::on_loginButton_clicked()
     QString username = ui->loginUsernameInput->text();
     QString password = ui->loginPasswordInput->text();
 
-    QFile file("userdata.txt");
+    QFile file("userdata.txt"); // @suppress("Type cannot be resolved")
     if ((username == "") & (password == "")) {
         QMessageBox::warning(this, "Login", "Username and password incorrect!");
     }
@@ -42,7 +42,7 @@ void MainWindow::on_loginButton_clicked()
             file.close();
         }
 
-        if(username == "test" && password == "test") {
+        if(username == "test1" && password == "test") {
             QMessageBox::information(this, "Login", "Username and password is correct");
             hide();
             Mainhub = new mainhub(this);
@@ -74,7 +74,3 @@ void MainWindow::on_shutdownButton_2_clicked()
     exit(1);
 }
 
-void MainWindow::on_loginPasswordInput_cursorPositionChanged(int arg1, int arg2)
-{
-
-}

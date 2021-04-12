@@ -65,22 +65,17 @@ mainhub::~mainhub()
     delete ui;
 }
 
-
-
 void mainhub::on_logOutButton_clicked()
 {
+    //log out and go back to login screen
    hide();
    mainWindow = new MainWindow(this);
    mainWindow->show();
 }
 
-void mainhub::brokerDisconnected()
-{
-    ui->userName->setText(tr("Connect"));
-}
-
 void mainhub::on_AccountButton_clicked()
 {
+    //show account settings
     hide();
     Account = new account(this);
     Account->show();
@@ -90,7 +85,7 @@ void mainhub::on_AccountButton_clicked()
 void mainhub::on_chat1_clicked()
 {
     something fff;
-
+    
     //get the name of the button as the chat name i.e. the name of the chat
     whaticlicked = ui->chat1->text();
     QString chatname = ui->chat1->text();
@@ -129,7 +124,11 @@ void mainhub::on_sendMessage_clicked()
 {
     something sss;
     //publish message
-
+    // check if recipient is online (use the chatname as the recipient look up)
+    //send message to recipient 
+    //wait for ACK
+    //if it works carry on else display error message saying recipient is offline.
+    
     //add text to the text file
     QString chatname = ui->recipientTitle->text();
 
@@ -150,11 +149,13 @@ void mainhub::on_sendMessage_clicked()
 
 void mainhub::on_powerButton_clicked()
 {
+    //exit the application
     exit(1);
 }
 
 void mainhub::on_restartButton_clicked()
 {
+    //restart the application
     hide();
     MainHub = new mainhub(this);
     MainHub->show();
@@ -165,7 +166,7 @@ void mainhub::on_RecipientButton_clicked()
     QString resipient = ui->RecipientInput->text();
     //check to see if recipient is online
 
-    //if online add to list
+    //if online add to list by looping list to see if any space is free
     if(ui->chat->text() == ""){
         ui->chat->setText(resipient);
     }else if (ui->chat1->text() ==""){
