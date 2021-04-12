@@ -129,6 +129,11 @@ void mainhub::on_sendMessage_clicked()
 {
     something sss;
     //publish message
+    //Get recipient from recipientTitle
+    //check to see if recipient is online  if not print error message staying user offline else continue
+    //Send message to recipient
+    //wait for ACK that the message was sent
+    //if all goes well continue
 
     //add text to the text file
     QString chatname = ui->recipientTitle->text();
@@ -164,6 +169,8 @@ void mainhub::on_RecipientButton_clicked()
 {
     QString resipient = ui->RecipientInput->text();
     //check to see if recipient is online
+    //Get recipient from recipientTitle
+    //check to see if recipient is online  if not print error message staying user offline else continue
 
     //if online add to list
     if(ui->chat->text() == ""){
