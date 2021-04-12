@@ -4,6 +4,8 @@
 #include <QDialog>
 #include "account.h"
 
+#include <QtMqtt/QMqttClient>
+
 namespace Ui {
 class mainhub;
 }
@@ -17,8 +19,6 @@ public:
     ~mainhub();
 
 private slots:
-    void on_sendMessageButton_clicked();
-
     void on_logOutButton_clicked();
 
     void on_AccountButton_clicked();
@@ -35,10 +35,16 @@ private slots:
 
     void on_RecipientButton_clicked();
 
+    void updateLogStateChange();
+
+    void brokerDisconnected();
+
 private:
     Ui::mainhub *ui;
     account *Account;
     mainhub *MainHub;
+    QMqttClient *m_client;
+
 public:
 
 };
